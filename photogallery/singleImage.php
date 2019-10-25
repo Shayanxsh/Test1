@@ -1,3 +1,6 @@
+<?php
+include '../test.php';
+?>
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -48,14 +51,14 @@
 				<div class="row">
 					<div class="col-xl-6 p-0">
 						<div>
-							<img src='' alt="">
+							<img src='<?php echo $imageSRC; ?>' alt="">
 						</div>
 					</div>
 					<div class="col-xl-6 p-0">
 						<div class="gallery-single-text">
-							<h2></h2>
+							<h2><?php echo $productTitle; ?> </h2>
 							<ul>
-								<li><span>Price:</span></li>
+								<li><span>Price:</span><?php echo $price; ?> </li>
 							</ul>
 					</div>
 				</div>
