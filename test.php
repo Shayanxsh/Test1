@@ -28,3 +28,13 @@ function get_web_page($url)
 $url = "https://www.digikala.com/product/dkp-90825";
 
 $page = get_web_page($url);
+
+//we should use regular expressions to match the strings in $page['content] with our desired strings
+preg_match('/<h1 class="c-product__title">(.*?)<\/h1>/s', $page['content'], $match1);
+$productTitle= $match1[1];
+
+preg_match_all('/class="js-gallery-img"(.*)src="(.*)"(.*)+/i',$page['content'], $match2);
+$imageSRC= $match2[2][0];
+
+preg_match('/<div class="c-product__seller-price-raw js-price-value">(.*?)<\/div>/s', $page['content'], $match3);
+$price= $match3[1];
